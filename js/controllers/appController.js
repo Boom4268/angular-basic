@@ -11,5 +11,20 @@ app.controller("myController", function($scope){
   ]
 
   $scope.users = data;
+
+  $scope.sortColumns = 'id';
+  $scope.reverse = false;
+  $scope.textSearch = '';
+
+  $scope.orderData = function(column){
+    if($scope.sortColumns === column){
+      $scope.reverse = !$scope.reverse;
+    }else{
+      $scope.sortColumns = column;
+      $scope.reverse = false;
+    }
+  }
+
+  $scope.formHtml = "form.html";
   
 })
